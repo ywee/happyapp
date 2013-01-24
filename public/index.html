@@ -48,23 +48,27 @@
         width: 175px;
       }
 
-      #footer {
-        clear: both;
-      }
-
-      #header, #about, #getting-started {
+      #header, #banner, #form {
         padding-left: 75px;
         padding-right: 30px;
       }
 
 
       #header {
-        background-image: url("assets/rails.png");
+        background-image: url("https://sphotos-a.xx.fbcdn.net/hphotos-snc7/6243_10152281217180046_1605814208_n.jpg");
         background-repeat: no-repeat;
         background-position: top left;
         height: 64px;
       }
+      
       #header h1, #header h2 {margin: 0}
+      
+      #header h1 {
+        color: #555;
+        font-weight: normal;
+        font-size: 30px;
+      }
+      
       #header h2 {
         color: #888;
         font-weight: normal;
@@ -72,99 +76,10 @@
       }
 
 
-      #about h3 {
+      #banner h1 {
         margin: 0;
         margin-bottom: 10px;
         font-size: 14px;
-      }
-
-      #about-content {
-        background-color: #ffd;
-        border: 1px solid #fc0;
-        margin-left: -55px;
-        margin-right: -10px;
-      }
-      #about-content table {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 11px;
-        border-collapse: collapse;
-      }
-      #about-content td {
-        padding: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-      }
-      #about-content td.name  {color: #555}
-      #about-content td.value {color: #000}
-
-      #about-content ul {
-        padding: 0;
-        list-style-type: none;
-      }
-
-      #about-content.failure {
-        background-color: #fcc;
-        border: 1px solid #f00;
-      }
-      #about-content.failure p {
-        margin: 0;
-        padding: 10px;
-      }
-
-
-      #getting-started {
-        border-top: 1px solid #ccc;
-        margin-top: 25px;
-        padding-top: 15px;
-      }
-      #getting-started h1 {
-        margin: 0;
-        font-size: 20px;
-      }
-      #getting-started h2 {
-        margin: 0;
-        font-size: 14px;
-        font-weight: normal;
-        color: #333;
-        margin-bottom: 25px;
-      }
-      #getting-started ol {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #getting-started li {
-        font-size: 18px;
-        color: #888;
-        margin-bottom: 25px;
-      }
-      #getting-started li h2 {
-        margin: 0;
-        font-weight: normal;
-        font-size: 18px;
-        color: #333;
-      }
-      #getting-started li p {
-        color: #555;
-        font-size: 13px;
-      }
-
-
-      #sidebar ul {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #sidebar ul h3 {
-        margin-top: 25px;
-        font-size: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-      }
-      #sidebar li {
-        list-style-type: none;
-      }
-      #sidebar ul.links li {
-        margin-bottom: 5px;
       }
 
       .filename {
@@ -195,11 +110,10 @@
         </div>
 
         <div id="about">
-          <h3><a href="https://www.facebook.com/yeongwei" onclick="about(); return false"> Click here to stalk me. </a></h3>
-          <div id="about-content" style="display: none"></div>
+          <h1><a href="www.facebook.com/yeongwei"> Click here to stalk me. </a></h1>
         </div>
 
-        <div id="getting-started">
+        <div id="form">
           <form> 
             What is your name?: <input type="text" name="name"><br>
             What would you like to do?: 
