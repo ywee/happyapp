@@ -1,0 +1,2 @@
+module EventReqsHelper
+end
