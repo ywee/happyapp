@@ -5,7 +5,7 @@ Happyapp::Application.routes.draw do
   resources :friends
 
 
-  get "home/index"
+  get "friends/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
