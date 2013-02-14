@@ -15,6 +15,13 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+  <div class="form_row">
+  <p>Gender:</p>
+  <% [ 'Male', 'Female', 'I decline gender stereotypes'].each do |gender| %>
+    <br><%= radio_button_tag 'gender', gender, @gender == gender %>
+    <%= label_tag "gender_#{gender}", gender.humanize %>
+  <% end %>
+</div>
   <div class="actions">
     <%= f.submit %>
   </div>
