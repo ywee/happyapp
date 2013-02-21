@@ -1,4 +1,7 @@
 Happyapp::Application.routes.draw do
+  resources :players
+
+
   resources :event_reqs
 
 
