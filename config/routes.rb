@@ -1,4 +1,6 @@
 Happyapp::Application.routes.draw do
+  devise_for :friends
+
   resources :players
 
 
