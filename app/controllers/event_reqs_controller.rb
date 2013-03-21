@@ -2,7 +2,7 @@ class EventReqsController < ApplicationController
   # GET /event_reqs
   # GET /event_reqs.json
   def index
-    @event_reqs = EventReq.all
+    @event_reqs = EventReq.top
 
     respond_to do |format|
       format.html # index.html.erb
