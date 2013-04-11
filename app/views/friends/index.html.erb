@@ -1,13 +1,16 @@
 <h1 style="text-align:center;font-size:20px;color:blue">Listing friends</h1>
 
-<table>
+
+<table id="friendtable">
   <tr>
     <th>Name</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
+  
+ 
+ <div id="hidemsg">CLICK ME TO HIDE THE TABLE BELOW</div> 
 <% @friends.each do |friend| %>
   <tr>
     <td><%= friend.name %></td>
@@ -19,7 +22,29 @@
 <% end %>
 </table>
 
+
+
 <br />
 
 <%= link_to 'New Friend', new_friend_path %>
 <%= link_to 'See Events', event_reqs_path %>
+
+
+<script>
+
+$(function() {
+	$('#hidemsg').click(function() {
+		if($('#hidemsg').text()=="CLICK ME TO HIDE THE TABLE BELOW")  {
+			$('#hidemsg').text("CLICK ME TO SHOW THE TABLE BELOW")
+			}
+		else {
+			$('#hidemsg').text("CLICK ME TO HIDE THE TABLE BELOW")
+		}
+		$('#friendtable').toggle();
+	}
+	);
+	});
+
+</script>
+
+
