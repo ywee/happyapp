@@ -8,6 +8,5 @@ class CreateComments < ActiveRecord::Migration
 
       t.timestamps
     end
-	add_index :comments, :event_req
   end
 end
