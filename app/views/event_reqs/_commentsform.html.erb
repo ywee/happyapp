@@ -1,0 +1,15 @@
+<%= form_for [@event_req, Comment.new] do |f| %>
+  <p>
+
+    <%= f.label :user, "Leave a Name" %><br />
+    <%= f.text_field :user %><br />
+    <%= f.label :body, "Thoughts" %><br />
+    <%= f.text_area :body %><br />
+  </p>
+
+  <p>
+    <%= f.submit "Add Response" %>
+  </p>
+<% end %>
+
+

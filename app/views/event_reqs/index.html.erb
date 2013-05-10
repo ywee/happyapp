@@ -1,29 +1,42 @@
-<h1>Listing event_reqs</h1>
+<% if friend_signed_in? %>
+  <div> You are signed in as: <%= current_friend.name %></div>
+  <div> Your email account used is: <%= current_friend.email %></div>
+<% end %>
+
+<h1 style="text-align:center;font-size:20px;color:blue">Join an Event today to make yourself Happy!</h1>
 
 
 
 <table>
   <tr>
-    <th>Friend</th>
-    <th>Time</th>
+    <th>Event Name</th>
+    <th>Day</th>
+	<th>Time</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
+
 <% @event_reqs.each do |event_req| %>
   <tr>
     <td><%= event_req.friend %></td>
     <td><%= event_req.time %></td>
-    <td><%= link_to 'Show', event_req %></td>
-    <td><%= link_to 'Edit', edit_event_req_path(event_req) %></td>
-    <td><%= link_to 'Destroy', event_req, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<td><%= event_req.when %></td>
+    <td><%= link_to 'Details', event_req %></td>
+    <td><%= link_to 'Update', edit_event_req_path(event_req) %></td>
+    <td><%= link_to 'Remove Event', event_req, method: :delete, data: { confirm: 'Are you sure you want to remove this? You would not be able to recover this after removal.' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Event Request', new_event_req_path %>
+<%= link_to 'Create New Event', new_event_req_path %>
+</br>
+<%= link_to 'See Users', friends_path %>
 
-<%= link_to 'See Friends', friends_path %>
+</br></br>
+<div> <b>About the Web App </b></div> 
+<div> This application works as a shout-out board for events amongst all your friends. Simply log in and post an event you're going to, and use the comments section to go to the event with others! </div> </br>
+

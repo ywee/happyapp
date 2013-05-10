@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1> Request meetup with @friend.name </h1>
+
+<p>
+  <b>Name:</b>
+  <%= @friend.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_friend_path(@friend) %> |
+<%= link_to 'Back', friends_path %>

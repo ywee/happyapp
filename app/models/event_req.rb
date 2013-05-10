@@ -1,5 +1,8 @@
 class EventReq < ActiveRecord::Base
-  attr_accessible :friend, :time
+  attr_accessible :friend, :time, :when, :description
+  has_many :comments
   
-  scope :top, order('friend desc').limit(2)
+  validates :friend, :presence => true
+
+  scope :top, order('time')
 end

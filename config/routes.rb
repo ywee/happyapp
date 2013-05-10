@@ -1,11 +1,21 @@
 Happyapp::Application.routes.draw do
+  resources :comments
+
+  
+  resources :meets
+
+
+  resources :meetings
+
+
   devise_for :friends
 
   resources :players
 
-
-  resources :event_reqs
-
+  resources :event_reqs do
+	resources :comments
+end
+  
 
   resources :friends
 
@@ -61,7 +71,7 @@ Happyapp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'friends#index'
+  root :to => 'event_reqs#index'
 
   # See how all your routes lay out with "rake routes"
 

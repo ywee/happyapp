@@ -11,14 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130227215732) do
+ActiveRecord::Schema.define(:version => 20130510151613) do
 
-  create_table "event_reqs", :force => true do |t|
-    t.string   "friend"
-    t.date     "time"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "comments", :force => true do |t|
+    t.string   "user"
+    t.text     "body"
+    t.boolean  "status"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "event_req_id"
   end
+
+# Could not dump table "event_reqs" because of following StandardError
+#   Unknown type 'belongs_to' for column 'comment'
 
   create_table "friends", :force => true do |t|
     t.string   "name"
@@ -38,6 +43,24 @@ ActiveRecord::Schema.define(:version => 20130227215732) do
 
   add_index "friends", ["email"], :name => "index_friends_on_email", :unique => true
   add_index "friends", ["reset_password_token"], :name => "index_friends_on_reset_password_token", :unique => true
+
+  create_table "meetings", :force => true do |t|
+    t.string   "name"
+    t.text     "minutes"
+    t.date     "day"
+    t.time     "when"
+    t.boolean  "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "meets", :force => true do |t|
+    t.string   "name"
+    t.text     "minutes"
+    t.date     "day"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "players", :force => true do |t|
     t.datetime "created_at", :null => false

@@ -1,15 +1,59 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Friend:</b>
+  <b>Name:</b>
   <%= @event_req.friend %>
 </p>
 
 <p>
-  <b>Time:</b>
+  <b>Day:</b>
   <%= @event_req.time %>
 </p>
 
+<p>
+  <b>About the Event:</b> </br>
+  <%= @event_req.description %>
+</p>
 
-<%= link_to 'Edit', edit_event_req_path(@event_req) %> |
-<%= link_to 'Back', event_reqs_path %>
+
+<h2 style="color:blue">Post Your Thoughts Here!</h2>
+
+<div id="hidemsg">Click here to SEE comments</div> 
+<div id = "commenttable">
+<% @event_req.comments.each do |c| %>
+  <p>
+    <b><%=h c.user %> said:</b><br />
+    <%= time_ago_in_words(c.created_at) %> ago
+  </p>
+
+  <p>
+    <%=h c.body %>
+  </p>
+<% end %>
+</div>
+
+
+<%= render 'commentsform' %>
+
+
+<%= link_to 'Back to Events List', event_reqs_path %>
+
+
+<script>
+
+$('#commenttable').toggle("fade");
+
+$(function() {
+	$('#hidemsg').click(function() {
+		if($('#hidemsg').text()=="Click here to SEE comments")  {
+			$('#hidemsg').text("Click here to HIDE comments")
+			}
+		else {
+			$('#hidemsg').text("Click here to SEE comments")
+		}
+		$('#commenttable').toggle("fade");
+	}
+	);
+	});
+
+</script>

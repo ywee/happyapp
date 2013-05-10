@@ -10,7 +10,9 @@ class Friend < ActiveRecord::Base
   attr_accessible :name
   validates :name, :presence => true
   
-  scope :top, order('name desc').limit(2)
+  has_many :event_reqs
+  
+  scope :top, order('name desc')
   
 end
 
